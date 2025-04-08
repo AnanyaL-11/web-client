@@ -1,0 +1,72 @@
+<!-- web-application/log-view.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Drone Logs</title>
+  <script type="module" src="./log-view.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+      background: linear-gradient(to right, #f3d5ff, #ffb3ec, #f3d5ff);
+      padding: 40px;
+      text-align: center;
+    }
+  
+    h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
+  
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border: 2px solid #d6d6d6; /* เส้นรอบนอก */
+    }
+  
+    th, td {
+      border: 1px solid #b1c0c7; /* เส้นของ row และ column */
+      padding: 12px 10px;
+      text-align: center;
+    }
+  
+    th {
+      background-color: #e786ff;
+      color: #000000;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f0f8ff;
+    }
+  </style>
+  
+</head>
+<body>
+  <h1>Drone Logs</h1>
+  <table id="log-table">
+    <thead>
+      <tr>
+        <th>Drone ID</th>
+        <th>Drone Name</th>
+        <th>Country</th>
+        <th>Celsius</th>
+        <th>Created</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <nav>
+    <ul>
+      <li><a href="config-view.html">Drone Config</a></li>
+      <li><a href="log-form.html">Log Temperature</a></li>
+      <li><a href="log-view.html">View Logs</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

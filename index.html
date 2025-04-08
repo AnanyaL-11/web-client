@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Drone Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="./config.js"></script>
+  <script type="module" src="./config-page.js" defer></script>
+  <script type="module" src="./log-form.js" defer></script>
+  <script type="module" src="./log-view.js" defer></script>
+</head>
+<body>
+  <nav>
+    <button onclick="showPage('config')">📋 Config</button>
+    <button onclick="showPage('log-form')">🌡️ Log Temp</button>
+    <button onclick="showPage('log-view')">📑 View Logs</button>
+  </nav>
+
+  <div id="config" class="page">
+    <h2>Drone Configuration</h2>
+    <p><strong>Drone ID:</strong> <span id="drone-id">Loading...</span></p>
+    <p><strong>Drone Name:</strong> <span id="drone-name">Loading...</span></p>
+    <p><strong>Light:</strong> <span id="light">Loading...</span></p>
+    <p><strong>Country:</strong> <span id="country">Loading...</span></p>
+  </div>
+
+  <div id="log-form" class="page" style="display: none;">
+    <h2>Check the Temperature Now!!!</h2>
+    <form id="temp-form">
+      <label for="celsius">Temperature (°C):</label>
+      <input type="number" id="celsius" required />
+      <button type="submit">Submit</button>
+    </form>
+    <p id="status"></p>
+  </div>
+
+  <div id="log-view" class="page" style="display: none;">
+    <h2>Drone Logs</h2>
+    <table id="log-table">
+      <thead>
+        <tr>
+          <th>Drone ID</th>
+          <th>Drone Name</th>
+          <th>Country</th>
+          <th>Celsius</th>
+          <th>Created</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      const pages = document.querySelectorAll(".page");
+      pages.forEach(page => page.style.display = "none");
+      document.getElementById(pageId).style.display = "block";
+    }
+  </script>
+</body>
+</html>
