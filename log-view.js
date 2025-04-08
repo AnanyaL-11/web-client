@@ -10,7 +10,7 @@ async function loadLogs() {
     const logs = await response.json();
 
     const tableBody = document.querySelector("#log-table tbody");
-    tableBody.innerHTML = ""; // เคลียร์ข้อมูลเก่า
+    tableBody.innerHTML = ""; 
 
     logs.forEach(log => {
       const row = document.createElement("tr");
